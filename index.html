@@ -31,17 +31,16 @@
 </script>
 <!-- SEO Code khatam -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--iv:#191610;--ch:#14110C;--gd:#C9A574;--gs:#DFC092;--es:#F5EFE6;--mu:#B8AC9B;--ln:rgba(201,165,116,.24);--lns:rgba(245,239,230,.10);color-scheme:dark}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
 body{background:var(--iv);color:var(--es);font-family:Jost,system-ui,sans-serif;font-weight:400;font-size:16px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .container{width:min(1140px,90vw);margin:0 auto;position:relative;z-index:2}
-.sec{padding:clamp(72px,10vw,124px) 0}
+.sec{padding:clamp(72px,10vw,124px) 0;overflow-x:clip}
 .sec-alt{background:linear-gradient(180deg,rgba(201,165,116,0) 0%,rgba(201,165,116,.05) 50%,rgba(201,165,116,0) 100%)}
 .sec-head{text-align:center;max-width:720px;margin:0 auto clamp(44px,6vw,68px)}
 .eyebrow{font-size:.7rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gd);font-weight:400}
@@ -164,7 +163,7 @@ body{background:radial-gradient(ellipse 120% 60% at 50% 0%,#241C14 0%,#18140F 45
 .rh-val em{font-style:normal;color:var(--gd)}
 .rh-lbl{display:block;margin-top:6px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}
 
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(18px,2.4vw,28px)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(18px,2.4vw,28px)}
 .stat-card{position:relative;overflow:hidden;z-index:1;padding:clamp(30px,4vw,46px);background:linear-gradient(180deg,#0E0C09 0%,#14110C 58%,rgba(25,22,16,.35) 100%);border:1px solid var(--ln);transition:.6s cubic-bezier(.22,.7,.28,1)}
 .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gd),transparent);opacity:0;transition:.6s}
 .stat-card:hover{transform:translateY(-6px);box-shadow:0 34px 60px -44px rgba(35,27,22,.55);border-color:rgba(184,134,75,.5)}
@@ -203,7 +202,7 @@ body{background:radial-gradient(ellipse 120% 60% at 50% 0%,#241C14 0%,#18140F 45
 @media(min-width:901px){.aud-metrics>div+div{border-left:1px solid var(--lns);padding-left:14px}}
 
 /* Ideal Brand Fit Grid */
-.brand-fit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2.2vw,24px)}
+.brand-fit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:clamp(16px,2.2vw,24px)}
 .bf-card{padding:28px 26px;background:linear-gradient(180deg,#0E0C09 0%,#14110C 58%,rgba(25,22,16,.35) 100%);border:1px solid var(--ln);transition:.45s cubic-bezier(.22,.7,.28,1)}
 .bf-card:hover{transform:translateY(-4px);border-color:rgba(166,118,60,.55);box-shadow:0 24px 48px -36px rgba(35,27,22,.45)}
 .bf-cat{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:8px}
@@ -213,7 +212,7 @@ body{background:radial-gradient(ellipse 120% 60% at 50% 0%,#241C14 0%,#18140F 45
 .integ-head{text-align:center;margin-bottom:28px}
 .integ-head h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--es);margin-top:8px}
 .integ-head h3 em{font-style:italic;color:var(--gd)}
-.integ-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px}
+.integ-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:18px}
 .integ-card{padding:24px 22px;background:linear-gradient(180deg,#0E0C09 0%,#14110C 58%,rgba(25,22,16,.35) 100%);border:1px solid var(--ln)}
 .integ-num{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:8px}
 .integ-title{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:500;color:var(--es);margin-bottom:6px}
@@ -222,7 +221,7 @@ body{background:radial-gradient(ellipse 120% 60% at 50% 0%,#241C14 0%,#18140F 45
 .reel-caption{margin-top:10px;font-size:.8rem;color:var(--mu);text-align:center;letter-spacing:.03em;line-height:1.45}
 
 /* Top Content Stats Cards CSS */
-.top-posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(18px,2.4vw,26px);margin-top:30px}
+.top-posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:clamp(18px,2.4vw,26px);margin-top:30px}
 .top-post-card{padding:28px 26px;background:linear-gradient(180deg,#0E0C09 0%,#14110C 58%,rgba(25,22,16,.35) 100%);border:1px solid var(--ln);display:flex;flex-direction:column;justify-content:space-between;transition:.45s ease}
 .top-post-card:hover{transform:translateY(-4px);border-color:rgba(201,165,116,.55)}
 .tp-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--lns)}
@@ -241,7 +240,7 @@ body{background:radial-gradient(ellipse 120% 60% at 50% 0%,#241C14 0%,#18140F 45
 .brand-item span{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mu)}
 
 /* Partnership Tiers */
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:clamp(18px,2.2vw,24px)}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:clamp(18px,2.2vw,24px)}
 .tier{position:relative;padding:clamp(32px,4vw,46px) clamp(26px,3.4vw,38px);background:linear-gradient(180deg,#0E0C09 0%,#14110C 58%,rgba(25,22,16,.35) 100%);border:1px solid var(--ln);display:flex;flex-direction:column;transition:.6s cubic-bezier(.22,.7,.28,1)}
 .tier:hover{transform:translateY(-6px);border-color:rgba(184,134,75,.55);box-shadow:0 34px 60px -44px rgba(35,27,22,.5)}
 .tier-num{font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.3em;color:var(--gd)}
@@ -342,6 +341,169 @@ html.quote-only-mode .quote-bottom-nav{display:block}
 input:checked+.slider{background-color:var(--gd)}
 input:checked+.slider:before{transform:translateX(22px)}
 
+/* SaaS Analytics Dashboard, Estimator, Badges & Print Styles */
+.sync-status-wrap{display:flex;justify-content:center;margin:-18px 0 26px}
+.sync-pill{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:999px;background:rgba(20,17,12,.85);border:1px solid rgba(110,214,148,.32);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--es);box-shadow:0 8px 24px -10px rgba(0,0,0,.7)}
+.sync-dot{width:7px;height:7px;border-radius:50%;background:#5CE08A;box-shadow:0 0 0 0 rgba(92,224,138,.65);animation:pulseGreen 2s infinite}
+@keyframes pulseGreen{0%{box-shadow:0 0 0 0 rgba(92,224,138,.65)}70%{box-shadow:0 0 0 7px rgba(92,224,138,0)}100%{box-shadow:0 0 0 0 rgba(92,224,138,0)}}
+
+.reach-dist-box{margin-bottom:28px;padding:20px 24px;border-radius:6px;background:linear-gradient(165deg,rgba(26,21,16,.94) 0%,rgba(14,11,8,.96) 100%);border:1px solid rgba(201,165,116,.30);border-bottom:3px solid rgba(166,118,60,.48);box-shadow:0 24px 48px -20px rgba(0,0,0,.85)}
+.dist-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.dist-title{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);font-weight:500}
+.dist-legend{font-size:.74rem;letter-spacing:.08em;color:var(--es)}
+.dist-bar{height:10px;width:100%;background:rgba(245,239,230,.08);border-radius:999px;overflow:hidden;display:flex;gap:2px}
+.dist-seg{height:100%;width:0;transition:width 1.4s cubic-bezier(.22,.7,.28,1)}
+.dist-seg.ig{background:linear-gradient(90deg,#DFC092,#C9A574)}
+.dist-seg.fb{background:linear-gradient(90deg,#A6763C,#8B5E2B)}
+.dist-seg.yt{background:linear-gradient(90deg,#F5EFE6,#DFC092)}
+
+.stat-graph{position:absolute;bottom:0;left:0;width:100%;height:74px;z-index:0;opacity:0.28;pointer-events:none}
+.stat-graph .grid-line{stroke:rgba(201,165,116,.14);stroke-width:0.8;stroke-dasharray:3 3;animation:none!important}
+.stat-graph .spark-line{fill:none;stroke:var(--gd);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320}
+.stat-card.in .stat-graph .spark-line{animation:drawGraph 1.9s cubic-bezier(0.22,0.7,0.28,1) forwards}
+.stat-graph .area{stroke:none;opacity:0}
+.stat-card.in .stat-graph .area{animation:fadeArea 1.8s 0.4s forwards}
+.stat-graph .spark-node{fill:var(--gs);opacity:0}
+.stat-graph .spark-halo{fill:var(--gd);opacity:0}
+.stat-card.in .stat-graph .spark-node{animation:fadeNode .6s 1.2s forwards}
+.stat-card.in .stat-graph .spark-halo{animation:pulseNode 2.4s 1.4s infinite}
+@keyframes fadeNode{to{opacity:1}}
+@keyframes pulseNode{0%,100%{opacity:.22;transform:scale(1)}50%{opacity:.55;transform:scale(1.35)}}
+
+.aud-bar-track{width:76%;max-width:210px;height:5px;margin:10px auto 0;background:rgba(245,239,230,.08);border-radius:999px;overflow:hidden}
+.aud-bar-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#A6763C,#DFC092);transition:width 1.4s cubic-bezier(.22,.7,.28,1)}
+
+.tp-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:12px;padding:4px 11px;border-radius:999px;background:rgba(201,165,116,.14);border:1px solid rgba(201,165,116,.45);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gs);font-weight:500}
+.tp-badge i{font-size:.66rem;color:var(--gd)}
+
+.estimator-box{margin:0 auto 30px;padding:24px 26px;border-radius:6px;background:linear-gradient(165deg,rgba(26,21,16,.94) 0%,rgba(14,11,8,.96) 100%);border:1px solid rgba(201,165,116,.34);border-bottom:3px solid rgba(166,118,60,.52);box-shadow:0 24px 52px -20px rgba(0,0,0,.9)}
+.est-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.est-eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:4px}
+.est-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:var(--es);line-height:1.2}
+.est-sub{font-size:.82rem;color:var(--mu);margin-top:3px}
+.est-controls{display:flex;flex-wrap:wrap;gap:8px}
+.est-btn{padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--ln);color:var(--mu);font-family:Jost,sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.est-btn:hover{border-color:var(--gd);color:var(--es)}
+.est-btn.active{background:var(--gd);border-color:var(--gd);color:#14110D;font-weight:500}
+.est-readout{margin-top:18px;padding-top:16px;border-top:1px solid var(--lns);display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center}
+.est-val{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.45rem,2.6vw,1.95rem);color:var(--gs);line-height:1.1}
+.est-lbl{display:block;margin-top:4px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mu)}
+.est-disc{margin-top:14px;text-align:center;font-size:.7rem;color:rgba(184,172,155,.72);line-height:1.5}
+@media(max-width:720px){.est-readout{grid-template-columns:1fr;gap:12px}}
+
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
+.analytics-charts-box{margin-top:28px;padding:24px 26px;border-radius:6px;background:linear-gradient(165deg,rgba(26,21,16,.94) 0%,rgba(14,11,8,.96) 100%);border:1px solid rgba(201,165,116,.32);border-bottom:3px solid rgba(166,118,60,.50);box-shadow:0 26px 54px -20px rgba(0,0,0,.9)}
+.ac-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--lns)}
+.ac-eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:4px}
+.ac-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;color:var(--es);line-height:1.2}
+.ac-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.ac-tab{padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--ln);color:var(--mu);font-family:Jost,sans-serif;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:6px}
+.ac-tab:hover{border-color:var(--gd);color:var(--es)}
+.ac-tab.active{background:var(--gd);border-color:var(--gd);color:#14110D;font-weight:500}
+.ac-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:22px;align-items:stretch}
+.ac-panel{background:rgba(14,11,8,.65);border:1px solid var(--lns);border-radius:6px;padding:18px 18px 14px;display:flex;flex-direction:column}
+.ac-panel-lbl{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gd);margin-bottom:4px}
+.ac-panel-sub{font-size:.76rem;color:var(--mu);margin-bottom:14px}
+.chart-canvas-wrap{position:relative;height:230px;width:100%}
+.ac-kpis{margin-top:18px;padding-top:16px;border-top:1px solid var(--lns);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
+.ac-kpi-val{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.2vw,1.65rem);color:var(--gs);line-height:1.15}
+.ac-kpi-lbl{display:block;margin-top:4px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+@media(max-width:860px){.ac-grid{grid-template-columns:1fr}.ac-kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ac-kpis{grid-template-columns:1fr}}
+.insights-proof-wrap{margin-top:34px;padding-top:30px;border-top:1px solid var(--lns)}
+.insights-proof-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:18px}
+.insights-proof-title{font-family:'Cormorant Garamond',serif;font-size:1.38rem;font-weight:500;color:var(--es);display:inline-flex;align-items:center;gap:9px}
+.insights-proof-title i{color:var(--gd);font-size:.95rem}
+.insights-proof-sub{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.insights-proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px}
+.shot-card{position:relative;overflow:hidden;border-radius:6px;background:linear-gradient(165deg,rgba(26,21,16,.94) 0%,rgba(14,11,8,.96) 100%);border:1px solid rgba(201,165,116,.30);border-bottom:3px solid rgba(166,118,60,.48);padding:14px;cursor:pointer;transition:.35s ease;text-align:left}
+.shot-card:hover{transform:translateY(-4px);border-color:var(--gd)}
+.shot-thumb{width:100%;height:190px;object-fit:cover;object-position:top center;border-radius:4px;border:1px solid var(--lns);display:block;background:#0D0B08}
+.shot-meta{display:flex;justify-content:space-between;align-items:center;margin-top:11px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gd)}
+.shot-meta span:last-child{color:var(--mu);font-size:.62rem}
+#shot-modal{position:fixed;inset:0;background:rgba(12,10,7,.94);z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(8px)}
+#shot-modal.show{display:flex}
+.shot-modal-box{position:relative;max-width:780px;width:100%;background:#18140F;border:1px solid var(--ln);border-radius:8px;padding:20px;box-shadow:0 30px 70px rgba(0,0,0,.9);text-align:center}
+.shot-modal-box img{max-width:100%;max-height:74vh;border-radius:4px;border:1px solid var(--lns);object-fit:contain}
+.shot-modal-cap{margin-top:12px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gd)}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#191610!important;color:#F5EFE6!important}
+  .bokeh-field,.hero-orb,.hero-actions,.no-print,#wa-modal,#email-modal,#shot-modal,.est-controls,.quote-bottom-nav{display:none!important}
+  [data-reveal]{opacity:1!important;transform:none!important}
+  .stat-card,.bf-card,.integ-card,.top-post-card,.tier,.scope-box,.reach-highlight,.aud-metrics,.estimator-box,.reach-dist-box{break-inside:avoid!important;page-break-inside:avoid!important}
+  .sec{padding:32px 0!important}
+}
+
+/* Strict Zero Horizontal Overflow & Mobile/Desktop Polish */
+html,body{max-width:100%;overflow-x:hidden}
+header,.cta,.hero,.sec{max-width:100%;overflow-x:clip}
+.hero-copy,.hero-visual,.stat-card,.bf-card,.integ-card,.top-post-card,.tier,.scope-box,.ac-panel,.reach-highlight,.aud-metrics,.estimator-box,.analytics-charts-box,.reach-dist-box{min-width:0;max-width:100%}
+.chart-canvas-wrap canvas{max-width:100%!important}
+.pill{max-width:100%;justify-content:center;text-align:center;flex-wrap:wrap;line-height:1.4}
+.cta-email{max-width:100%;word-break:break-word}
+.tp-title,.bf-title,.tier-title,.ac-title,.est-title{overflow-wrap:break-word;word-wrap:break-word}
+@media(max-width:600px){
+  .container{width:min(1140px,92vw)}
+  .pill{padding:7px 14px;letter-spacing:.16em;font-size:.6rem}
+  .hero-tag{letter-spacing:.22em}
+  .analytics-charts-box,.estimator-box,.reach-dist-box{padding:18px 14px}
+  .ac-panel{padding:14px 12px}
+  .chart-canvas-wrap{height:200px}
+  .ac-tabs,.est-controls{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ac-tab,.est-btn{width:100%;justify-content:center;text-align:center;padding:8px 10px;font-size:.62rem;letter-spacing:.1em}
+  .cta-btns{flex-direction:column;width:100%}
+  .cta-btns .btn{width:100%}
+  .tp-stats{gap:8px}
+  .tp-val{font-size:1.25rem}
+  .sync-pill{font-size:.58rem;letter-spacing:.12em;padding:6px 12px}
+}
+/* Qolab-Style Sticky SaaS Header Nav & Multi-Page Views */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(20,17,12,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.hdr .container{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+.nav-tabs{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.nav-tab{padding:8px 15px;border-radius:999px;border:1px solid transparent;background:transparent;color:var(--mu);font-family:Jost,sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:7px}
+.nav-tab:hover{color:var(--es);border-color:var(--ln)}
+.nav-tab.active{background:rgba(201,165,116,.16);border-color:var(--gd);color:var(--gs);font-weight:500}
+.hdr-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hdr-pill-btn{padding:8px 14px;border-radius:999px;border:1px solid var(--ln);background:rgba(255,255,255,.03);color:var(--es);font-family:Jost,sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:6px}
+.hdr-pill-btn:hover{border-color:var(--gd);color:var(--gd)}
+.hdr-pill-btn.gold{background:var(--gd);border-color:var(--gd);color:#14110D;font-weight:500}
+.hdr-pill-btn.gold:hover{background:var(--gs)}
+
+/* Multi-Page View Visibility (Desktop & Mobile) */
+[data-view]{display:none!important}
+[data-view].view-active{display:block!important;animation:viewFade .35s ease}
+@keyframes viewFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+html.quote-only-mode .nav-tabs,html.quote-only-mode .hdr-actions{display:none!important}
+html.quote-only-mode #partnerships{display:block!important}
+
+/* Live YouTube Recent Videos Table / Grid */
+.yt-videos-panel{margin-top:28px;padding:24px 26px;border-radius:6px;background:linear-gradient(165deg,rgba(26,21,16,.94) 0%,rgba(14,11,8,.96) 100%);border:1px solid rgba(201,165,116,.32);border-bottom:3px solid rgba(166,118,60,.50);box-shadow:0 24px 52px -20px rgba(0,0,0,.9)}
+.ytv-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--lns)}
+.ytv-meta-pills{display:flex;flex-wrap:wrap;gap:8px}
+.ytv-pill{padding:5px 12px;border-radius:999px;border:1px solid var(--ln);background:rgba(201,165,116,.08);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gs)}
+.ytv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.ytv-card{display:flex;flex-direction:column;justify-content:space-between;background:rgba(14,11,8,.72);border:1px solid var(--lns);border-radius:6px;overflow:hidden;text-decoration:none;color:var(--es);transition:.3s}
+.ytv-card:hover{border-color:var(--gd);transform:translateY(-3px)}
+.ytv-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0D0B08}
+.ytv-body{padding:14px}
+.ytv-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;line-height:1.28;color:var(--es);margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ytv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-top:10px;border-top:1px solid var(--lns);text-align:center}
+.ytv-val{display:block;font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:var(--gs);line-height:1.1}
+.ytv-lbl{display:block;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:3px}
+
+@media(max-width:920px){
+  .hdr .container{flex-direction:column;gap:10px;padding:12px 0}
+  .hdr-actions{display:none}
+  .nav-tabs{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .nav-tab{padding:8px 4px;font-size:.58rem;letter-spacing:.08em;justify-content:center;text-align:center}
+  .nav-tab i{display:none}
+}
+@media print{
+  [data-view]{display:block!important}
+  .nav-tabs,.hdr-actions{display:none!important}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}}
 @media(max-width:900px){
   .audience-grid{grid-template-columns:1fr;gap:44px}
@@ -375,6 +537,7 @@ try{
   window.__miPrefetch=fetch('https://api.jsonbin.io/v3/b/6afafe7dffd5d16053c58e33/latest',{headers:_hdr,cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
 }catch(e){}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="bokeh-field" aria-hidden="true">
@@ -394,16 +557,26 @@ try{
       <script>try{var _l=localStorage.getItem('mi_logo_cache')||(JSON.parse(localStorage.getItem('mi_stats')||'{}').logoUrl);if(_l){var _el=document.getElementById('site-logo');_el.src=_l;_el.style.display='block';}}catch(e){}</script>
       Mothers<em>&nbsp;</em>Inside
     </div>
+    <nav class="nav-tabs no-print" aria-label="Media Kit Sections">
+      <button type="button" class="nav-tab active" data-tab="profile"><i class="fa-solid fa-user" aria-hidden="true"></i> Profile</button>
+      <button type="button" class="nav-tab" data-tab="analytics"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Analytics</button>
+      <button type="button" class="nav-tab" data-tab="content"><i class="fa-solid fa-play" aria-hidden="true"></i> Content</button>
+      <button type="button" class="nav-tab" data-tab="rate-card"><i class="fa-solid fa-tags" aria-hidden="true"></i> Rate Card</button>
+    </nav>
+    <div class="hdr-actions no-print">
+      <button type="button" class="hdr-pill-btn" id="hdr-pdf-btn"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> PDF</button>
+      <a class="hdr-pill-btn gold" data-href="emailCta"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Collab</a>
+    </div>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero view-active" data-view="profile">
   <div class="hero-orb o1" aria-hidden="true"></div>
   <div class="hero-orb o2" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="pill"><i class="dot"></i>Available for Brand Collaborations · 2026</span>
+        <span class="pill"><i class="dot"></i><span id="hero-slot-badge">Available for Brand Collaborations · 2026</span></span>
         <h1 class="hero-title">Mothers <em>Inside</em></h1>
         <p class="hero-tag" data-txt="tagline"></p>
         <div class="rule" aria-hidden="true"><i></i><b>◆</b><i></i></div>
@@ -431,12 +604,19 @@ try{
 </section>
 
 <!-- 01 — REACH & PERFORMANCE -->
-<section class="sec" id="reach">
+<section class="sec" id="reach" data-view="analytics">
   <div class="container">
     <div class="sec-head" data-reveal>
       <p class="eyebrow">01 — Reach &amp; Performance</p>
       <h2 class="sec-title">Live Performance <em>&amp;</em> Reach</h2>
       <p class="sec-sub">Real numbers, real mothers. A high-intent, high-trust community built on research-backed parenting insights and honest recommendations.</p>
+    </div>
+
+    <div class="sync-status-wrap" data-reveal>
+      <span class="sync-pill">
+        <i class="sync-dot" aria-hidden="true"></i>
+        Live Insights · Synced <span id="last-synced-date">Nov 2026</span>
+      </span>
     </div>
 
     <div class="reach-highlight" data-reveal>
@@ -445,8 +625,8 @@ try{
         <span class="rh-lbl">Combined 30-Day Views</span>
       </div>
       <div class="rh-item">
-        <span class="rh-val">High <em>Organic</em></span>
-        <span class="rh-lbl">Non-Follower Discovery Reach</span>
+        <span class="rh-val" id="organic-multiplier">272x<em>+</em></span>
+        <span class="rh-lbl">Organic Reach-to-Follower</span>
       </div>
       <div class="rh-item">
         <span class="rh-val">Tier 1 <em>&amp;</em> 2</span>
@@ -454,17 +634,35 @@ try{
       </div>
     </div>
 
+    <div class="reach-dist-box" id="reach-dist-box" data-reveal>
+      <div class="dist-head">
+        <span class="dist-title">Platform Reach Distribution</span>
+        <span class="dist-legend" id="dist-legend">Facebook 67% · Instagram 33%</span>
+      </div>
+      <div class="dist-bar" aria-label="Platform Reach Split">
+        <div class="dist-seg fb" id="dist-seg-fb" data-pct="67"></div>
+        <div class="dist-seg ig" id="dist-seg-ig" data-pct="33"></div>
+        <div class="dist-seg yt" id="dist-seg-yt" data-pct="0" style="display:none;"></div>
+      </div>
+    </div>
+
     <div class="stats-grid">
       <article class="stat-card" data-reveal>
-        <svg class="stat-graph" viewBox="0 0 200 60" preserveAspectRatio="none">
+        <svg class="stat-graph" viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true">
           <defs>
             <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="var(--gd)" stop-opacity="1"/>
+              <stop offset="0%" stop-color="var(--gd)" stop-opacity="0.75"/>
               <stop offset="100%" stop-color="var(--gd)" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <path class="area" d="M0,50 C30,40 50,20 80,30 C120,45 150,10 200,20 L200,60 L0,60 Z"/>
-          <path d="M0,50 C30,40 50,20 80,30 C120,45 150,10 200,20"/>
+          <line class="grid-line" x1="0" y1="18" x2="200" y2="18"/>
+          <line class="grid-line" x1="0" y1="38" x2="200" y2="38"/>
+          <line class="grid-line" x1="0" y1="56" x2="200" y2="56"/>
+          <path class="area" fill="url(#goldGradient)" d="M0,56 C30,46 50,24 85,34 C120,44 155,14 200,20 L200,70 L0,70 Z"/>
+          <path class="spark-line" d="M0,56 C30,46 50,24 85,34 C120,44 155,14 200,20"/>
+          <circle class="spark-halo" cx="85" cy="34" r="6"/><circle class="spark-node" cx="85" cy="34" r="2.6"/>
+          <circle class="spark-halo" cx="155" cy="21" r="6"/><circle class="spark-node" cx="155" cy="21" r="2.6"/>
+          <circle class="spark-halo" cx="194" cy="20" r="6.5"/><circle class="spark-node" cx="194" cy="20" r="2.8"/>
         </svg>
         <div class="stat-top"><span class="stat-plat"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</span><span class="stat-handle" data-txt="handle"></span></div>
         <div class="stat-grid">
@@ -475,9 +673,21 @@ try{
       </article>
 
       <article class="stat-card" data-reveal>
-        <svg class="stat-graph" viewBox="0 0 200 60" preserveAspectRatio="none">
-          <path class="area" d="M0,40 C40,50 70,10 110,20 C150,30 180,5 200,15 L200,60 L0,60 Z"/>
-          <path d="M0,40 C40,50 70,10 110,20 C150,30 180,5 200,15"/>
+        <svg class="stat-graph" viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGradFB" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--gd)" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="var(--gd)" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line class="grid-line" x1="0" y1="18" x2="200" y2="18"/>
+          <line class="grid-line" x1="0" y1="38" x2="200" y2="38"/>
+          <line class="grid-line" x1="0" y1="56" x2="200" y2="56"/>
+          <path class="area" fill="url(#goldGradFB)" d="M0,48 C40,56 70,16 110,24 C150,32 178,10 200,16 L200,70 L0,70 Z"/>
+          <path class="spark-line" d="M0,48 C40,56 70,16 110,24 C150,32 178,10 200,16"/>
+          <circle class="spark-halo" cx="76" cy="26" r="6"/><circle class="spark-node" cx="76" cy="26" r="2.6"/>
+          <circle class="spark-halo" cx="145" cy="26" r="6"/><circle class="spark-node" cx="145" cy="26" r="2.6"/>
+          <circle class="spark-halo" cx="194" cy="15" r="6.5"/><circle class="spark-node" cx="194" cy="15" r="2.8"/>
         </svg>
         <div class="stat-top"><span class="stat-plat"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</span><span class="stat-handle">Mothers Inside</span></div>
         <div class="stat-grid">
@@ -488,9 +698,21 @@ try{
       </article>
 
       <article class="stat-card" id="yt-card" data-reveal style="display:none;">
-        <svg class="stat-graph" viewBox="0 0 200 60" preserveAspectRatio="none">
-          <path class="area" d="M0,30 C40,50 70,10 110,20 C150,30 180,5 200,15 L200,60 L0,60 Z"/>
-          <path d="M0,30 C40,50 70,10 110,20 C150,30 180,5 200,15"/>
+        <svg class="stat-graph" viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGradYT" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--gd)" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="var(--gd)" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line class="grid-line" x1="0" y1="18" x2="200" y2="18"/>
+          <line class="grid-line" x1="0" y1="38" x2="200" y2="38"/>
+          <line class="grid-line" x1="0" y1="56" x2="200" y2="56"/>
+          <path class="area" fill="url(#goldGradYT)" d="M0,42 C38,52 72,18 112,26 C150,34 176,12 200,18 L200,70 L0,70 Z"/>
+          <path class="spark-line" d="M0,42 C38,52 72,18 112,26 C150,34 176,12 200,18"/>
+          <circle class="spark-halo" cx="76" cy="27" r="6"/><circle class="spark-node" cx="76" cy="27" r="2.6"/>
+          <circle class="spark-halo" cx="145" cy="27" r="6"/><circle class="spark-node" cx="145" cy="27" r="2.6"/>
+          <circle class="spark-halo" cx="194" cy="17" r="6.5"/><circle class="spark-node" cx="194" cy="17" r="2.8"/>
         </svg>
         <div class="stat-top"><span class="stat-plat"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</span><span class="stat-handle">Mothers Inside</span></div>
         <div class="stat-grid">
@@ -500,11 +722,81 @@ try{
         <p class="stat-note">Engagement: <em>In-depth video guides</em> and detailed product reviews for expecting &amp; new moms.</p>
       </article>
     </div>
+
+    <div class="analytics-charts-box" id="analytics-charts-box" data-reveal>
+      <div class="ac-head">
+        <div>
+          <p class="ac-eyebrow">Platform Deep-Dive &amp; Trajectory</p>
+          <h3 class="ac-title">Detailed Analytics Breakdown</h3>
+        </div>
+        <div class="ac-tabs" role="tablist" aria-label="Platform Analytics View">
+          <button type="button" class="ac-tab active" data-ac-tab="combined">Combined</button>
+          <button type="button" class="ac-tab" data-ac-tab="ig"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</button>
+          <button type="button" class="ac-tab" data-ac-tab="fb"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</button>
+          <button type="button" class="ac-tab" id="ac-tab-yt" data-ac-tab="yt" style="display:none;"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</button>
+        </div>
+      </div>
+
+      <div class="ac-grid">
+        <div class="ac-panel">
+          <span class="ac-panel-lbl" id="ac-c1-title">30-Day Reach Pace (Combined)</span>
+          <span class="ac-panel-sub" id="ac-c1-sub">Weekly cumulative views distribution derived from live 30-day totals</span>
+          <div class="chart-canvas-wrap">
+            <canvas id="miTrendChart" aria-label="30-Day Reach Pace Chart"></canvas>
+          </div>
+        </div>
+        <div class="ac-panel">
+          <span class="ac-panel-lbl" id="ac-c2-title">Platform Reach Share</span>
+          <span class="ac-panel-sub" id="ac-c2-sub">Proportion of total organic impressions across active channels</span>
+          <div class="chart-canvas-wrap">
+            <canvas id="miSplitChart" aria-label="Platform Breakdown Chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="ac-kpis">
+        <div>
+          <span class="ac-kpi-val" id="ac-kpi-1">532K+</span>
+          <span class="ac-kpi-lbl" id="ac-kpi-1-lbl">30-Day Views</span>
+        </div>
+        <div>
+          <span class="ac-kpi-val" id="ac-kpi-2">1,956</span>
+          <span class="ac-kpi-lbl" id="ac-kpi-2-lbl">Total Followers</span>
+        </div>
+        <div>
+          <span class="ac-kpi-val" id="ac-kpi-3">272x+</span>
+          <span class="ac-kpi-lbl" id="ac-kpi-3-lbl">Reach Multiplier</span>
+        </div>
+        <div>
+          <span class="ac-kpi-val" id="ac-kpi-4">88% Women</span>
+          <span class="ac-kpi-lbl" id="ac-kpi-4-lbl">Core Audience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="yt-videos-panel" id="yt-videos-panel" style="display:none;" data-reveal>
+      <div class="ytv-head">
+        <div>
+          <p class="ac-eyebrow">Live Platform Feed</p>
+          <h3 class="ac-title">Top 6 Most-Viewed Videos &amp; Engagement</h3>
+        </div>
+        <div class="ac-tabs" role="tablist" aria-label="Live Recent Content Platform">
+          <button type="button" class="ac-tab live-plat-tab active" id="lp-tab-yt" data-lp="yt" style="display:none;"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</button>
+          <button type="button" class="ac-tab live-plat-tab" id="lp-tab-ig" data-lp="ig" style="display:none;"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</button>
+          <button type="button" class="ac-tab live-plat-tab" id="lp-tab-fb" data-lp="fb" style="display:none;"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</button>
+        </div>
+        <div class="ytv-meta-pills">
+          <span class="ytv-pill">Avg. Views: <strong id="yt-avg-views">—</strong></span>
+          <span class="ytv-pill">Avg. Engagement: <strong id="yt-avg-er">—</strong></span>
+        </div>
+      </div>
+      <div class="ytv-grid" id="ytv-grid"></div>
+    </div>
   </div>
 </section>
 
 <!-- 02 — AUDIENCE -->
-<section class="sec sec-alt" id="audience">
+<section class="sec sec-alt" id="audience" data-view="analytics">
   <div class="container">
     <div class="sec-head" data-reveal>
       <p class="eyebrow">02 — Audience</p>
@@ -535,14 +827,16 @@ try{
         </div>
       </div>
     </div>
-    <div class="aud-metrics" data-reveal>
+    <div class="aud-metrics" id="aud-metrics" data-reveal>
       <div>
         <span class="aud-m-val" id="aud-gender">88% Women</span>
         <span class="aud-m-lbl">Gender Split</span>
+        <div class="aud-bar-track"><div class="aud-bar-fill" id="aud-gender-bar" data-pct="88"></div></div>
       </div>
       <div>
         <span class="aud-m-val" id="aud-age">68% (25–34)</span>
         <span class="aud-m-lbl">Top Age Group</span>
+        <div class="aud-bar-track"><div class="aud-bar-fill" id="aud-age-bar" data-pct="68"></div></div>
       </div>
       <div>
         <span class="aud-m-val" id="aud-cities">Delhi · Mumbai · Pune</span>
@@ -553,7 +847,7 @@ try{
 </section>
 
 <!-- 03 — IDEAL BRAND FIT (NEW SECTION) -->
-<section class="sec" id="brand-fit">
+<section class="sec view-active" id="brand-fit" data-view="profile">
   <div class="container">
     <div class="sec-head" data-reveal>
       <p class="eyebrow">03 — Ideal Brand Fit</p>
@@ -625,7 +919,7 @@ try{
 </section>
 
 <!-- 04 — TOP CONTENT (STATS ONLY) -->
-<section class="sec" id="reels">
+<section class="sec" id="reels" data-view="content">
   <div class="container">
     <div class="sec-head" data-reveal>
       <p class="eyebrow">04 — Top Content</p>
@@ -633,14 +927,21 @@ try{
       <p class="sec-sub">Performance highlights of our top-performing reels and videos.</p>
     </div>
     <div class="top-posts-grid" id="reelsGrid"></div>
+    <div class="insights-proof-wrap" id="insights-proof-wrap" style="display:none;" data-reveal>
+      <div class="insights-proof-head">
+        <h3 class="insights-proof-title"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Verified Platform Insights</h3>
+        <span class="insights-proof-sub">Click any screenshot to inspect full-size</span>
+      </div>
+      <div class="insights-proof-grid" id="insights-proof-grid"></div>
+    </div>
   </div>
 </section>
   
 <!-- 06 — PAST COLLABORATIONS (CONTROLLED BY ADMIN TOGGLE) -->
-<section class="sec" id="brands" style="display:none;">
+<section class="sec" id="brands" data-view="profile" style="display:none;">
   <div class="container">
     <div class="sec-head" data-reveal>
-      <p class="eyebrow">06 — Trusted By</p>
+      <p class="eyebrow">05 — Trusted By</p>
       <h2 class="sec-title">Past <em>Collaborations</em></h2>
       <p class="sec-sub">Brands that have partnered with Mothers Inside for authentic, high-trust storytelling.</p>
     </div>
@@ -649,14 +950,45 @@ try{
 </section>
 
 <!-- 07 — PARTNERSHIP TIERS -->
-<section class="sec sec-alt" id="partnerships">
+<section class="sec sec-alt" id="partnerships" data-view="rate-card">
   <div class="container">
     <div class="sec-head" data-reveal>
-      <p class="eyebrow">07 — Collaborations</p>
+      <p class="eyebrow">06 — Collaborations</p>
       <h2 class="sec-title">Partnership <em>Tiers</em></h2>
       <p class="sec-sub">Transparent, flexible formats designed for D2C mom, baby, skincare, and wellness brands.</p>
     </div>
     <div id="quote-banner-slot"></div>
+    <div class="estimator-box" id="campaign-estimator" data-reveal>
+      <div class="est-top">
+        <div>
+          <p class="est-eyebrow">Campaign Reach Estimator</p>
+          <h3 class="est-title">Projected Campaign Impressions</h3>
+          <p class="est-sub">Select your target platforms to estimate organic reach based on live 30-day data.</p>
+        </div>
+        <div class="est-controls" role="group" aria-label="Campaign Platform Selector">
+          <button type="button" class="est-btn" data-est="ig">Instagram Only</button>
+          <button type="button" class="est-btn" data-est="fb">Facebook Only</button>
+          <button type="button" class="est-btn" id="est-btn-yt" data-est="yt" style="display:none;">YouTube Only</button>
+          <button type="button" class="est-btn active" data-est="ig_fb">IG + FB Bundle</button>
+          <button type="button" class="est-btn" id="est-btn-all3" data-est="all3" style="display:none;">All 3 (IG+FB+YT)</button>
+        </div>
+      </div>
+      <div class="est-readout">
+        <div>
+          <span class="est-val" id="est-impressions">400K – 532K+</span>
+          <span class="est-lbl">Estimated Impressions</span>
+        </div>
+        <div>
+          <span class="est-val" id="est-platforms">IG + FB Reels</span>
+          <span class="est-lbl">Selected Distribution</span>
+        </div>
+        <div>
+          <span class="est-val" id="est-tier-rec">Multi-Platform Bundle</span>
+          <span class="est-lbl">Recommended Tier</span>
+        </div>
+      </div>
+      <p class="est-disc">*Estimates reflect historical 30-day organic reach and are not guaranteed campaign deliverables.</p>
+    </div>
     <div class="tiers">
       <article class="tier" data-reveal>
         <span class="tier-num">01</span>
@@ -738,10 +1070,10 @@ try{
 </section>
 
 <!-- 08 — BRAND FAQ -->
-<section class="sec" id="faq">
+<section class="sec view-active" id="faq" data-view="profile">
   <div class="container">
     <div class="sec-head" data-reveal>
-      <p class="eyebrow">08 — Questions</p>
+      <p class="eyebrow">07 — Questions</p>
       <h2 class="sec-title">Brand <em>FAQ</em></h2>
       <p class="sec-sub">Quick answers on turnaround, deliverables, usage rights, and booking a campaign.</p>
     </div>
@@ -750,15 +1082,18 @@ try{
 </section>
 
 <!-- 09 — LET'S TALK / FOOTER -->
-<section class="cta" id="contact">
+<section class="cta view-active" id="contact" data-view="profile">
   <div class="container">
-    <p class="eyebrow" data-reveal>09 — Let's Talk</p>
+    <p class="eyebrow" data-reveal>08 — Let's Talk</p>
     <h2 class="cta-title" data-reveal>Let's Build Something <em>Together</em></h2>
     <div class="rule" aria-hidden="true" data-reveal><i></i><b>◆</b><i></i></div>
     <p class="cta-sub" data-reveal>For collaborations, rate card, and availability — write directly to the inbox below. Detailed audience demographics and reel insights available on request.</p>
     <div data-reveal>
-      <a class="btn btn-gold" data-href="emailCta">Let's Build Something Together</a>
-      <br><br>
+      <div class="cta-btns">
+        <a class="btn btn-gold" data-href="emailCta">Let's Build Something Together</a>
+        <button type="button" class="btn btn-ghost no-print" id="btn-save-pdf"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Download / Print PDF</button>
+      </div>
+      <br>
       <a class="cta-email" data-href="email" data-txt="email"></a>
     </div>
     <div class="cta-socials" data-reveal>
@@ -795,6 +1130,15 @@ try{
       <button class="btn-outline-gold" id="wa-copy-btn" type="button">Copy Message</button>
       <button class="btn-cancel" id="wa-cancel-btn" type="button">Cancel</button>
     </div>
+  </div>
+</div>
+
+<!-- 📊 VERIFIED INSIGHTS LIGHTBOX MODAL -->
+<div id="shot-modal" role="dialog" aria-modal="true" aria-label="Verified Insights Screenshot">
+  <div class="shot-modal-box">
+    <button class="btn-close" id="shot-close-btn" type="button" aria-label="Close Screenshot">✕</button>
+    <img id="shot-modal-img" src="" alt="Verified Platform Insights">
+    <p class="shot-modal-cap" id="shot-modal-cap"></p>
   </div>
 </div>
 
@@ -1250,16 +1594,51 @@ function applyMediaKitData(data) {
     try { localStorage.setItem('mi_logo_cache', data.logoUrl); } catch(e) {}
   }
 
-  // Audience % Breakdown
+  // Hero FOMO Slot Badge & Live Sync Date
+  const slotEl = document.getElementById('hero-slot-badge');
+  if (slotEl) slotEl.textContent = data.slotBadge || 'Available for Brand Collaborations · 2026';
+  const syncEl = document.getElementById('last-synced-date');
+  if (syncEl) syncEl.textContent = data.syncedAt || 'Nov 2026';
+
+  // Audience % Breakdown & Animated Bars
+  const gStr = data.audGender || '88% Women';
+  const aStr = data.audAge || '68% (25–34)';
   const gEl = document.getElementById('aud-gender');
   const aEl = document.getElementById('aud-age');
   const cEl = document.getElementById('aud-cities');
-  if (gEl) gEl.textContent = data.audGender || '88% Women';
-  if (aEl) aEl.textContent = data.audAge || '68% (25–34)';
+  if (gEl) gEl.textContent = gStr;
+  if (aEl) aEl.textContent = aStr;
   if (cEl) cEl.textContent = data.audCities || 'Delhi · Mumbai · Pune';
 
-  // Combined views highlight (IG + FB + YouTube when enabled)
-  const totalV = parseKValue(data.igViews) + parseKValue(data.fbViews) + (data.ytShow ? parseKValue(data.ytViews) : 0);
+  const parsePct = (s, def) => {
+    const m = String(s || '').match(/(\d+(?:\.\d+)?)\s*%/);
+    return m ? Math.min(100, Math.max(0, parseFloat(m[1]))) : def;
+  };
+  const gBar = document.getElementById('aud-gender-bar');
+  const aBar = document.getElementById('aud-age-bar');
+  const audMetricsEl = document.getElementById('aud-metrics');
+  if (gBar) {
+    gBar.dataset.pct = parsePct(gStr, 88);
+    if (audMetricsEl && audMetricsEl.classList.contains('in')) gBar.style.width = gBar.dataset.pct + '%';
+  }
+  if (aBar) {
+    aBar.dataset.pct = parsePct(aStr, 68);
+    if (audMetricsEl && audMetricsEl.classList.contains('in')) aBar.style.width = aBar.dataset.pct + '%';
+  }
+
+  // Combined views, Organic Reach Multiplier & Platform Reach Distribution
+  const igV = parseKValue(data.igViews);
+  const fbV = parseKValue(data.fbViews);
+  const ytV = data.ytShow ? parseKValue(data.ytViews) : 0;
+  const totalV = igV + fbV + ytV;
+  const totalF = parseKValue(data.igFollowers) + parseKValue(data.fbFollowers) + (data.ytShow ? parseKValue(data.ytFollowers) : 0);
+
+  const multEl = document.getElementById('organic-multiplier');
+  if (multEl && totalF > 0 && totalV > 0) {
+    const mult = Math.max(1, Math.round(totalV / totalF));
+    multEl.innerHTML = `${mult}x<em>+</em>`;
+  }
+
   const combEl = document.getElementById('combined-views');
   const heroArtViews = document.getElementById('hero-art-views');
   if (combEl && totalV > 0) {
@@ -1276,6 +1655,40 @@ function applyMediaKitData(data) {
       combEl.innerHTML = (totalV >= 1000000 ? '0M' : '0K') + '<span class="plus">+</span>';
     }
   }
+
+  // Platform Reach Distribution Bar
+  if (totalV > 0) {
+    const fbPct = Math.round((fbV / totalV) * 100);
+    const ytPct = data.ytShow ? Math.round((ytV / totalV) * 100) : 0;
+    const igPct = Math.max(0, 100 - fbPct - ytPct);
+    const legEl = document.getElementById('dist-legend');
+    const segFb = document.getElementById('dist-seg-fb');
+    const segIg = document.getElementById('dist-seg-ig');
+    const segYt = document.getElementById('dist-seg-yt');
+    const distBox = document.getElementById('reach-dist-box');
+    if (legEl) {
+      legEl.textContent = data.ytShow
+        ? `Facebook ${fbPct}% · Instagram ${igPct}% · YouTube ${ytPct}%`
+        : `Facebook ${fbPct}% · Instagram ${igPct}%`;
+    }
+    if (segFb) { segFb.dataset.pct = fbPct; if (distBox && distBox.classList.contains('in')) segFb.style.width = fbPct + '%'; }
+    if (segIg) { segIg.dataset.pct = igPct; if (distBox && distBox.classList.contains('in')) segIg.style.width = igPct + '%'; }
+    if (segYt) {
+      segYt.style.display = data.ytShow ? 'block' : 'none';
+      segYt.dataset.pct = ytPct;
+      if (distBox && distBox.classList.contains('in')) segYt.style.width = ytPct + '%';
+    }
+  }
+
+  // Interactive Campaign Reach Estimator & Detailed Charts
+  const all3Btn = document.getElementById('est-btn-all3');
+  const ytOnlyBtn = document.getElementById('est-btn-yt');
+  const acYtTab = document.getElementById('ac-tab-yt');
+  if (all3Btn) all3Btn.style.display = data.ytShow ? 'inline-block' : 'none';
+  if (ytOnlyBtn) ytOnlyBtn.style.display = data.ytShow ? 'inline-block' : 'none';
+  if (acYtTab) acYtTab.style.display = data.ytShow ? 'inline-flex' : 'none';
+  updateEstimator(window.__miEstMode || 'ig_fb', data);
+  renderAnalyticsCharts(window.__miAcTab || 'combined', data);
 
   // Stats (IG, FB, YT - animate when card is in view or upon scroll)
   document.querySelectorAll('[data-stat]').forEach(el => {
@@ -1342,6 +1755,7 @@ function applyMediaKitData(data) {
   const forceFull = sp.get('full') === '1';
   if (urlQuote && !forceFull) {
     document.documentElement.classList.add('quote-only-mode');
+    switchPageView('rate-card', true);
   } else {
     document.documentElement.classList.remove('quote-only-mode');
   }
@@ -1351,7 +1765,7 @@ function applyMediaKitData(data) {
     fullKitBtn.dataset.bound = '1';
     fullKitBtn.addEventListener('click', () => {
       document.documentElement.classList.remove('quote-only-mode');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      switchPageView('profile');
     });
   }
 
@@ -1416,6 +1830,8 @@ function applyMediaKitData(data) {
   }
   
 renderTopPosts(data);
+  renderYtRecentVideos(data);
+  renderInsightsShots(data);
   renderBrands(data.brands, data.brandsShow);
   renderFAQs(data.faqs);
 }
@@ -1475,35 +1891,499 @@ async function loadMediaKitData() {
 }
 loadMediaKitData();
 
+  /* ==================== CAMPAIGN ESTIMATOR & PDF PRINT ==================== */
+function fmtShortViews(n) {
+  if (!n || n <= 0) return '0';
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  if (n >= 1000) return Math.round(n / 1000) + 'K';
+  return String(Math.round(n));
+}
+
+function updateEstimator(mode, data) {
+  window.__miEstMode = mode || 'ig_fb';
+  const d = data || window.__miLatestData || {};
+  const igV = parseKValue(d.igViews || '176K+');
+  const fbV = parseKValue(d.fbViews || '356K+');
+  const ytV = d.ytShow ? parseKValue(d.ytViews || '25K+') : 0;
+
+  let total = igV + fbV;
+  let platTxt = 'IG + FB Reels';
+  let tierTxt = 'Multi-Platform Bundle';
+
+  if (mode === 'ig') {
+    total = igV;
+    platTxt = 'Instagram Reel';
+    tierTxt = 'Single Platform';
+  } else if (mode === 'fb') {
+    total = fbV;
+    platTxt = 'Facebook Reel';
+    tierTxt = 'Single Platform';
+  } else if (mode === 'yt' && d.ytShow) {
+    total = ytV;
+    platTxt = 'YouTube Short / Video';
+    tierTxt = 'Single Platform / YT Long';
+  } else if (mode === 'all3' && d.ytShow) {
+    total = igV + fbV + ytV;
+    platTxt = 'IG + FB + YT Shorts';
+    tierTxt = 'Multi-Platform Bundle';
+  }
+
+  const low = Math.round(total * 0.75);
+  const impEl = document.getElementById('est-impressions');
+  const platEl = document.getElementById('est-platforms');
+  const tierEl = document.getElementById('est-tier-rec');
+  if (impEl) impEl.textContent = `${fmtShortViews(low)} – ${fmtShortViews(total)}+`;
+  if (platEl) platEl.textContent = platTxt;
+  if (tierEl) tierEl.textContent = tierTxt;
+}
+
+document.querySelectorAll('.est-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.est-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateEstimator(btn.dataset.est, window.__miLatestData);
+  });
+});
+
+function prepareForPrint() {
+  document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('in'));
+  document.querySelectorAll('[data-stat]').forEach(el => {
+    if (el.dataset.target) {
+      el.innerHTML = String(el.dataset.target).replace('+', '<span class="plus">+</span>');
+      el.dataset.animated = 'true';
+    }
+  });
+  const combEl = document.getElementById('combined-views');
+  if (combEl && combEl.dataset.target) {
+    combEl.innerHTML = String(combEl.dataset.target).replace('+', '<span class="plus">+</span>');
+    combEl.dataset.animated = 'true';
+  }
+  document.querySelectorAll('.dist-seg, .aud-bar-fill').forEach(bar => {
+    if (bar.dataset.pct !== undefined) bar.style.width = bar.dataset.pct + '%';
+  });
+}
+
+window.addEventListener('beforeprint', prepareForPrint);
+const pdfBtn = document.getElementById('btn-save-pdf');
+const hdrPdfBtn = document.getElementById('hdr-pdf-btn');
+[pdfBtn, hdrPdfBtn].forEach(b => {
+  if (b) b.addEventListener('click', () => {
+    prepareForPrint();
+    setTimeout(() => window.print(), 80);
+  });
+});
+
+function switchPageView(tabName, skipHash) {
+  const valid = ['profile', 'analytics', 'content', 'rate-card'];
+  const target = valid.includes(tabName) ? tabName : 'profile';
+  document.querySelectorAll('.nav-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === target);
+  });
+  document.querySelectorAll('[data-view]').forEach(sec => {
+    sec.classList.toggle('view-active', sec.dataset.view === target);
+  });
+  if (!skipHash && window.location.hash !== '#' + target) {
+    try { history.replaceState(null, '', '#' + target); } catch(e) {}
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => {
+    document.querySelectorAll('[data-view].view-active [data-reveal]').forEach(el => el.classList.add('in'));
+    document.querySelectorAll('[data-view].view-active [data-stat]').forEach(el => {
+      if (el.dataset.target && !el.dataset.animated) {
+        renderStat(el, el.dataset.target);
+        el.dataset.animated = 'true';
+      }
+    });
+    const combEl = document.getElementById('combined-views');
+    if (target === 'analytics' && combEl && combEl.dataset.target && !combEl.dataset.animated) {
+      renderStat(combEl, combEl.dataset.target);
+      combEl.dataset.animated = 'true';
+    }
+    if (target === 'analytics') {
+      document.querySelectorAll('.dist-seg, .aud-bar-fill').forEach(bar => {
+        if (bar.dataset.pct !== undefined) bar.style.width = bar.dataset.pct + '%';
+      });
+      if (miTrendChartInst) miTrendChartInst.resize();
+      if (miSplitChartInst) miSplitChartInst.resize();
+    }
+  }, 60);
+}
+
+document.querySelectorAll('.nav-tab').forEach(btn => {
+  btn.addEventListener('click', () => switchPageView(btn.dataset.tab));
+});
+
+const initHash = (window.location.hash || '').replace('#', '');
+if (['profile', 'analytics', 'content', 'rate-card'].includes(initHash)) {
+  switchPageView(initHash, true);
+}
+
+function renderLivePlatGrid(plat, data) {
+  const d = data || window.__miLatestData || {};
+  const grid = document.getElementById('ytv-grid');
+  const avgV = document.getElementById('yt-avg-views');
+  const avgE = document.getElementById('yt-avg-er');
+  if (!grid) return;
+
+  let list = [];
+  if (plat === 'ig') {
+    list = Array.isArray(d.igRecentPosts) ? d.igRecentPosts : [];
+    if (avgV) avgV.textContent = d.igAvgViews || '—';
+    if (avgE) avgE.textContent = d.igAvgEr || '—';
+  } else if (plat === 'fb') {
+    list = Array.isArray(d.fbRecentPosts) ? d.fbRecentPosts : [];
+    if (avgV) avgV.textContent = d.fbAvgViews || '—';
+    if (avgE) avgE.textContent = d.fbAvgEr || '—';
+  } else {
+    list = Array.isArray(d.ytRecentVideos) ? d.ytRecentVideos : [];
+    if (avgV) avgV.textContent = d.ytAvgViews || '—';
+    if (avgE) avgE.textContent = d.ytAvgEr || '—';
+  }
+
+  document.querySelectorAll('.live-plat-tab').forEach(b => b.classList.toggle('active', b.dataset.lp === plat));
+  grid.innerHTML = list.map(v => `
+    <a class="ytv-card" href="${escapeHtml(v.url)}" target="_blank" rel="noopener">
+      ${v.thumb ? `<img class="ytv-thumb" src="${escapeHtml(v.thumb)}" alt="${escapeHtml(v.title)}" loading="lazy">` : ''}
+      <div class="ytv-body">
+        <h4 class="ytv-title">${escapeHtml(v.title)}</h4>
+        <div class="ytv-stats">
+          <div><span class="ytv-val">${escapeHtml(v.views)}</span><span class="ytv-lbl">Views</span></div>
+          <div><span class="ytv-val">${escapeHtml(v.likes)}</span><span class="ytv-lbl">Likes</span></div>
+          <div><span class="ytv-val">${escapeHtml(v.er)}</span><span class="ytv-lbl">Eng. Rate</span></div>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+document.querySelectorAll('.live-plat-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    window.__miLivePlat = btn.dataset.lp;
+    renderLivePlatGrid(btn.dataset.lp, window.__miLatestData);
+  });
+});
+
+function renderYtRecentVideos(data) {
+  const panel = document.getElementById('yt-videos-panel');
+  if (!panel) return;
+  const hasYt = Boolean(data.ytShow && Array.isArray(data.ytRecentVideos) && data.ytRecentVideos.length > 0);
+  const hasIg = Boolean(Array.isArray(data.igRecentPosts) && data.igRecentPosts.length > 0);
+  const hasFb = Boolean(Array.isArray(data.fbRecentPosts) && data.fbRecentPosts.length > 0);
+
+  const tYt = document.getElementById('lp-tab-yt');
+  const tIg = document.getElementById('lp-tab-ig');
+  const tFb = document.getElementById('lp-tab-fb');
+  if (tYt) tYt.style.display = hasYt ? 'inline-flex' : 'none';
+  if (tIg) tIg.style.display = hasIg ? 'inline-flex' : 'none';
+  if (tFb) tFb.style.display = hasFb ? 'inline-flex' : 'none';
+
+  if (!hasYt && !hasIg && !hasFb) {
+    panel.style.display = 'none';
+    return;
+  }
+  panel.style.display = 'block';
+  panel.classList.add('in');
+  const active = (window.__miLivePlat === 'ig' && hasIg) ? 'ig'
+    : (window.__miLivePlat === 'fb' && hasFb) ? 'fb'
+    : hasYt ? 'yt' : hasIg ? 'ig' : 'fb';
+  renderLivePlatGrid(active, data);
+}
+
+  /* ==================== DETAILED PLATFORM CHARTS (CHART.JS) ==================== */
+let miTrendChartInst = null;
+let miSplitChartInst = null;
+
+function renderAnalyticsCharts(tab, data) {
+  window.__miAcTab = tab || 'combined';
+  const d = data || window.__miLatestData || {};
+  const igV = parseKValue(d.igViews || '176K+');
+  const fbV = parseKValue(d.fbViews || '356K+');
+  const ytV = d.ytShow ? parseKValue(d.ytViews || '25K+') : 0;
+  const igF = parseKValue(d.igFollowers || '836');
+  const fbF = parseKValue(d.fbFollowers || '1120');
+  const ytF = d.ytShow ? parseKValue(d.ytFollowers || '500') : 0;
+  const totalV = igV + fbV + ytV;
+  const totalF = igF + fbF + ytF;
+
+  // Update KPI strip
+  const k1 = document.getElementById('ac-kpi-1'), k1l = document.getElementById('ac-kpi-1-lbl');
+  const k2 = document.getElementById('ac-kpi-2'), k2l = document.getElementById('ac-kpi-2-lbl');
+  const k3 = document.getElementById('ac-kpi-3'), k3l = document.getElementById('ac-kpi-3-lbl');
+  const k4 = document.getElementById('ac-kpi-4'), k4l = document.getElementById('ac-kpi-4-lbl');
+  const c1t = document.getElementById('ac-c1-title'), c2t = document.getElementById('ac-c2-title');
+  const c2s = document.getElementById('ac-c2-sub');
+
+  const activeViews = tab === 'ig' ? igV : tab === 'fb' ? fbV : tab === 'yt' ? ytV : totalV;
+  const activeFoll = tab === 'ig' ? igF : tab === 'fb' ? fbF : tab === 'yt' ? ytF : totalF;
+  const weeklyAvg = Math.round(activeViews / 4);
+  const nonFollPct = activeViews > 0 ? Math.min(99, Math.max(50, Math.round(((activeViews - activeFoll) / activeViews) * 100))) : 95;
+  const topPosts = Array.isArray(d.topPosts) && d.topPosts.length ? d.topPosts : [];
+  const topPostMatch = tab === 'ig' ? topPosts.find(p => /insta/i.test(p.plat))
+    : tab === 'fb' ? topPosts.find(p => /face/i.test(p.plat))
+    : tab === 'yt' ? topPosts.find(p => /you/i.test(p.plat))
+    : topPosts[0];
+  const topPostViews = (topPostMatch && topPostMatch.views) ? topPostMatch.views : (tab === 'ig' ? (d.igViews || '176K+') : tab === 'fb' ? (d.fbViews || '356K+') : tab === 'yt' ? (d.ytViews || '25K+') : '356K+');
+
+  if (k1) k1.textContent = fmtShortViews(weeklyAvg) + '+';
+  if (k1l) k1l.textContent = 'Avg. Weekly Views';
+  if (k2) k2.textContent = activeFoll >= 1000 ? activeFoll.toLocaleString('en-IN') : String(activeFoll);
+  if (k2l) k2l.textContent = tab === 'yt' ? 'Subscribers' : 'Total Followers';
+  if (k3) k3.textContent = nonFollPct + '%';
+  if (k3l) k3l.textContent = 'Non-Follower Reach';
+  if (k4) k4.textContent = topPostViews;
+  if (k4l) k4l.textContent = 'Top Content Views';
+
+  const tabName = tab === 'ig' ? 'Instagram' : tab === 'fb' ? 'Facebook' : tab === 'yt' ? 'YouTube' : 'Combined';
+  if (c1t) c1t.textContent = `30-Day Reach Pace (${tabName})`;
+  if (c2t) c2t.textContent = tab === 'combined' ? 'Platform Reach Share' : `${tabName} Engagement & Format Mix`;
+  if (c2s) c2s.textContent = tab === 'combined'
+    ? 'Proportion of total organic impressions across active channels'
+    : `Estimated audience & format performance breakdown for ${tabName}`;
+
+  if (typeof Chart === 'undefined') return;
+
+  const trendCtx = document.getElementById('miTrendChart');
+  const splitCtx = document.getElementById('miSplitChart');
+  if (!trendCtx || !splitCtx) return;
+
+  const gold = '#DFC092';
+  const bronze = '#A6763C';
+  const cream = '#F5EFE6';
+  const muted = '#B8AC9B';
+  const gridCol = 'rgba(201,165,116,0.12)';
+
+  const hist = Array.isArray(d.growthHistory) && d.growthHistory.length >= 2 ? d.growthHistory : null;
+  const wWeights = [0.16, 0.22, 0.28, 0.34];
+  const labels = hist ? hist.map(h => h.date) : ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+
+  let trendDatasets = [];
+  if (tab === 'combined') {
+    trendDatasets.push({
+      label: 'Instagram',
+      data: hist ? hist.map(h => h.igViews || igV) : wWeights.map(w => Math.round(igV * w)),
+      borderColor: gold,
+      backgroundColor: 'rgba(223,192,146,0.16)',
+      fill: true,
+      tension: 0.38,
+      pointRadius: 4,
+      pointBackgroundColor: gold
+    });
+    trendDatasets.push({
+      label: 'Facebook',
+      data: hist ? hist.map(h => h.fbViews || fbV) : wWeights.map(w => Math.round(fbV * w)),
+      borderColor: bronze,
+      backgroundColor: 'rgba(166,118,60,0.14)',
+      fill: true,
+      tension: 0.38,
+      pointRadius: 4,
+      pointBackgroundColor: bronze
+    });
+    if (d.ytShow) {
+      trendDatasets.push({
+        label: 'YouTube',
+        data: hist ? hist.map(h => h.ytViews || ytV) : wWeights.map(w => Math.round(ytV * w)),
+        borderColor: cream,
+        backgroundColor: 'rgba(245,239,230,0.08)',
+        fill: true,
+        tension: 0.38,
+        pointRadius: 4,
+        pointBackgroundColor: cream
+      });
+    }
+  } else {
+    trendDatasets.push({
+      label: `${tabName} Views`,
+      data: hist ? hist.map(h => tab === 'ig' ? (h.igViews || igV) : tab === 'fb' ? (h.fbViews || fbV) : (h.ytViews || ytV)) : wWeights.map(w => Math.round(activeViews * w)),
+      borderColor: gold,
+      backgroundColor: 'rgba(201,165,116,0.22)',
+      fill: true,
+      tension: 0.38,
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      pointBackgroundColor: cream,
+      pointBorderColor: gold,
+      pointBorderWidth: 2
+    });
+  }
+
+  if (miTrendChartInst) miTrendChartInst.destroy();
+  miTrendChartInst = new Chart(trendCtx, {
+    type: 'line',
+    data: { labels, datasets: trendDatasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: muted, font: { family: 'Jost, sans-serif', size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.dataset.label}: ${fmtShortViews(ctx.parsed.y)}`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: gridCol }, ticks: { color: muted, font: { size: 11 } } },
+        y: {
+          grid: { color: gridCol },
+          ticks: {
+            color: muted,
+            font: { size: 11 },
+            callback: (v) => fmtShortViews(v)
+          }
+        }
+      }
+    }
+  });
+
+  if (miSplitChartInst) miSplitChartInst.destroy();
+  if (tab === 'combined') {
+    const sLabels = d.ytShow ? ['Facebook', 'Instagram', 'YouTube'] : ['Facebook', 'Instagram'];
+    const sData = d.ytShow ? [fbV, igV, ytV] : [fbV, igV];
+    const sColors = d.ytShow ? [bronze, gold, cream] : [bronze, gold];
+    miSplitChartInst = new Chart(splitCtx, {
+      type: 'doughnut',
+      data: {
+        labels: sLabels,
+        datasets: [{ data: sData, backgroundColor: sColors, borderColor: '#14110C', borderWidth: 3 }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '64%',
+        plugins: {
+          legend: { position: 'bottom', labels: { color: muted, padding: 14, font: { family: 'Jost, sans-serif', size: 11 } } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const pct = totalV > 0 ? Math.round((ctx.parsed / totalV) * 100) : 0;
+                return `${ctx.label}: ${fmtShortViews(ctx.parsed)} (${pct}%)`;
+              }
+            }
+          }
+        }
+      }
+    });
+  } else {
+    const nonFoll = Math.max(0, activeViews - activeFoll);
+    const barLabels = tab === 'yt'
+      ? ['Non-Subscriber Reach', 'Subscriber Reach', 'Core Mom Age (25–34)']
+      : ['Non-Follower Discovery', 'Follower Reach', 'Core Mom Age (25–34)'];
+    const barVals = [
+      activeViews > 0 ? Math.round((nonFoll / activeViews) * 100) : 95,
+      activeViews > 0 ? Math.max(2, Math.round((activeFoll / activeViews) * 100)) : 5,
+      parseInt(String(d.audAge || '68').match(/\d+/)?.[0] || '68', 10)
+    ];
+    miSplitChartInst = new Chart(splitCtx, {
+      type: 'bar',
+      data: {
+        labels: barLabels,
+        datasets: [{
+          label: '% Share',
+          data: barVals,
+          backgroundColor: [gold, bronze, 'rgba(245,239,230,0.72)'],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { max: 100, grid: { color: gridCol }, ticks: { color: muted, callback: v => v + '%' } },
+          y: { grid: { display: false }, ticks: { color: cream, font: { size: 11 } } }
+        }
+      }
+    });
+  }
+}
+
+document.querySelectorAll('.ac-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ac-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderAnalyticsCharts(btn.dataset.acTab, window.__miLatestData);
+  });
+});
+
+  /* ==================== VERIFIED INSIGHTS SCREENSHOTS ==================== */
+const shotModal = document.getElementById('shot-modal');
+const shotModalImg = document.getElementById('shot-modal-img');
+const shotModalCap = document.getElementById('shot-modal-cap');
+const shotCloseBtn = document.getElementById('shot-close-btn');
+if (shotCloseBtn) shotCloseBtn.addEventListener('click', () => shotModal.classList.remove('show'));
+if (shotModal) shotModal.addEventListener('click', (e) => { if (e.target === shotModal) shotModal.classList.remove('show'); });
+
+function renderInsightsShots(data) {
+  const wrap = document.getElementById('insights-proof-wrap');
+  const grid = document.getElementById('insights-proof-grid');
+  if (!wrap || !grid) return;
+
+  const shots = [];
+  if (data.insIg) shots.push({ plat: 'Instagram Insights', img: data.insIg });
+  if (data.insFb) shots.push({ plat: 'Facebook Insights', img: data.insFb });
+  if (data.insYt) shots.push({ plat: 'YouTube Studio Analytics', img: data.insYt });
+
+  if (!data.insightsShow || shots.length === 0) {
+    wrap.style.display = 'none';
+    return;
+  }
+  wrap.style.display = 'block';
+  wrap.classList.add('in');
+  grid.innerHTML = shots.map((s, i) => `
+    <button type="button" class="shot-card" data-shot-idx="${i}">
+      <img class="shot-thumb" src="${s.img}" alt="${escapeHtml(s.plat)} Screenshot" loading="lazy">
+      <div class="shot-meta">
+        <span>${escapeHtml(s.plat)}</span>
+        <span>Zoom ↗</span>
+      </div>
+    </button>
+  `).join('');
+
+  grid.querySelectorAll('.shot-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const s = shots[parseInt(btn.dataset.shotIdx, 10)];
+      if (!s || !shotModal) return;
+      shotModalImg.src = s.img;
+      shotModalCap.textContent = s.plat;
+      shotModal.classList.add('show');
+    });
+  });
+}
+
   /* ==================== RENDER TOP CONTENT CARDS ==================== */
 function renderTopPosts(data) {
   const grid = document.getElementById('reelsGrid');
   if (!grid) return;
 
   const defaultTP = [
-    { plat: "Instagram Reel", title: "8th Month Pregnancy Prep", views: "176K+", likes: "5,791", engagement: "High Saves", url: "https://www.instagram.com/mothersinside" },
-    { plat: "Facebook Reel", title: "Newborn Care & Mom Tips", views: "356K+", likes: "4,200+", engagement: "High Shares", url: "https://www.facebook.com/share/1A4pG5oqd1/" },
-    { plat: "YouTube Short", title: "Baby Skincare Routine", views: "25K+", likes: "1,200+", engagement: "High Watch Time", url: "https://www.youtube.com/@mothersinside" }
+    { plat: "Instagram Reel", badge: "Viral Reach", title: "8th Month Pregnancy Prep", views: "176K+", likes: "5,791", engagement: "High Saves", url: "https://www.instagram.com/mothersinside" },
+    { plat: "Facebook Reel", badge: "High-Save Guide", title: "Newborn Care & Mom Tips", views: "356K+", likes: "4,200+", engagement: "High Shares", url: "https://www.facebook.com/share/1A4pG5oqd1/" },
+    { plat: "YouTube Short", badge: "Top Watch Time", title: "Baby Skincare Routine", views: "25K+", likes: "1,200+", engagement: "High Watch Time", url: "https://www.youtube.com/@mothersinside" }
   ];
 
   const posts = (data.topPosts && data.topPosts.length > 0) ? data.topPosts : defaultTP;
 
-  grid.innerHTML = posts.map(p => `
+  grid.innerHTML = posts.map((p, idx) => {
+    const badgeText = p.badge || (defaultTP[idx] ? defaultTP[idx].badge : '');
+    return `
     <article class="top-post-card">
       <div>
         <div class="tp-head">
-          <span class="tp-plat">${p.plat}</span>
-          ${p.url ? `<a class="tp-link" href="${p.url}" target="_blank" rel="noopener">View ↗</a>` : ''}
+          <span class="tp-plat">${escapeHtml(p.plat)}</span>
+          ${p.url ? `<a class="tp-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">View ↗</a>` : ''}
         </div>
-        <h3 class="tp-title">${p.title}</h3>
+        ${badgeText ? `<span class="tp-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> ${escapeHtml(badgeText)}</span>` : ''}
+        <h3 class="tp-title">${escapeHtml(p.title)}</h3>
       </div>
       <div class="tp-stats">
-        <div><span class="tp-val">${p.views}</span><span class="tp-lbl">Views</span></div>
-        <div><span class="tp-val">${p.likes}</span><span class="tp-lbl">Likes</span></div>
-        <div><span class="tp-val">${p.engagement}</span><span class="tp-lbl">Engagement</span></div>
+        <div><span class="tp-val">${escapeHtml(p.views)}</span><span class="tp-lbl">Views</span></div>
+        <div><span class="tp-val">${escapeHtml(p.likes)}</span><span class="tp-lbl">Likes</span></div>
+        <div><span class="tp-val">${escapeHtml(p.engagement)}</span><span class="tp-lbl">Engagement</span></div>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
   }
 
 /* ==================== 6) SCROLL REVEAL ==================== */
@@ -1526,6 +2406,11 @@ try {
                 renderStat(el, el.dataset.target);
                 el.dataset.animated = "true";
               }
+            });
+          }
+          if (e.target.classList.contains('reach-dist-box') || e.target.classList.contains('aud-metrics')) {
+            e.target.querySelectorAll('.dist-seg, .aud-bar-fill').forEach(bar => {
+              if (bar.dataset.pct !== undefined) bar.style.width = bar.dataset.pct + '%';
             });
           }
           obs.unobserve(e.target);
