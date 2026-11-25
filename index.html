@@ -459,7 +459,8 @@ header,.cta,.hero,.sec{max-width:100%;overflow-x:clip}
   .sync-pill{font-size:.58rem;letter-spacing:.12em;padding:6px 12px}
 }
 /* Qolab-Style Sticky SaaS Header Nav & Multi-Page Views */
-.hdr{position:sticky;top:0;z-index:100;background:rgba(20,17,12,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.hdr{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;background:rgba(20,17,12,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ln);transition:transform .32s cubic-bezier(.22,.7,.28,1),opacity .28s ease}
+.hdr.hdr-hidden{transform:translateY(-105%);opacity:0;pointer-events:none}
 .hdr .container{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
 .nav-tabs{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
 .nav-tab{padding:8px 15px;border-radius:999px;border:1px solid transparent;background:transparent;color:var(--mu);font-family:Jost,sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:7px}
@@ -532,9 +533,7 @@ try{
     document.documentElement.classList.add('quote-only-mode');
   }
   var _cached=JSON.parse(localStorage.getItem('mi_stats')||'{}');
-  var _rk="$2a$10$BY1RtYMjnMaR9r3XN1ySO.mT1jd0flmCmJ1flWmLTAW2.tu07jnYC";
-  var _hdr=(_rk && _rk.indexOf('YAHAN_')!==0)?{'X-Access-Key':_rk}:{};
-  window.__miPrefetch=fetch('https://api.jsonbin.io/v3/b/6afafe7dffd5d16053c58e33/latest',{headers:_hdr,cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
+  window.__miPrefetch=fetch('https://mothers-inside-sync.mummaminni0.workers.dev/data',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
 }catch(e){}
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -589,7 +588,7 @@ try{
           <a class="btn btn-primary" data-href="emailCta"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Direct Collab Email</a>
           <a class="btn btn-ghost" data-href="igUrl" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram Profile</a>
           <a class="btn btn-ghost" data-href="fbUrl" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook Page</a>
-          <a class="btn btn-ghost" id="yt-hero-btn" style="display:none;" data-href="ytUrl" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube Channel</a>
+          <a class="btn btn-ghost" id="yt-hero-btn" data-href="ytUrl" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube Channel</a>
           <a class="btn btn-ghost" id="wa-hero-btn" style="display:none;" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Collab</a>
         </div>
       </div>
@@ -642,7 +641,7 @@ try{
       <div class="dist-bar" aria-label="Platform Reach Split">
         <div class="dist-seg fb" id="dist-seg-fb" data-pct="67"></div>
         <div class="dist-seg ig" id="dist-seg-ig" data-pct="33"></div>
-        <div class="dist-seg yt" id="dist-seg-yt" data-pct="0" style="display:none;"></div>
+        <div class="dist-seg yt" id="dist-seg-yt" data-pct="5"></div>
       </div>
     </div>
 
@@ -697,7 +696,7 @@ try{
         <p class="stat-note">Engagement: <em>Active community engagement</em> — comments, shares, and repeat viewers across Tier 1 &amp; Tier 2 cities.</p>
       </article>
 
-      <article class="stat-card" id="yt-card" data-reveal style="display:none;">
+      <article class="stat-card" id="yt-card" data-reveal>
         <svg class="stat-graph" viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true">
           <defs>
             <linearGradient id="goldGradYT" x1="0" y1="0" x2="0" y2="1">
@@ -733,7 +732,7 @@ try{
           <button type="button" class="ac-tab active" data-ac-tab="combined">Combined</button>
           <button type="button" class="ac-tab" data-ac-tab="ig"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</button>
           <button type="button" class="ac-tab" data-ac-tab="fb"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</button>
-          <button type="button" class="ac-tab" id="ac-tab-yt" data-ac-tab="yt" style="display:none;"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</button>
+          <button type="button" class="ac-tab" id="ac-tab-yt" data-ac-tab="yt"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</button>
         </div>
       </div>
 
@@ -970,9 +969,9 @@ try{
         <div class="est-controls" role="group" aria-label="Campaign Platform Selector">
           <button type="button" class="est-btn" data-est="ig">Instagram Only</button>
           <button type="button" class="est-btn" data-est="fb">Facebook Only</button>
-          <button type="button" class="est-btn" id="est-btn-yt" data-est="yt" style="display:none;">YouTube Only</button>
+          <button type="button" class="est-btn" id="est-btn-yt" data-est="yt">YouTube Only</button>
           <button type="button" class="est-btn active" data-est="ig_fb">IG + FB Bundle</button>
-          <button type="button" class="est-btn" id="est-btn-all3" data-est="all3" style="display:none;">All 3 (IG+FB+YT)</button>
+          <button type="button" class="est-btn" id="est-btn-all3" data-est="all3">All 3 (IG+FB+YT)</button>
         </div>
       </div>
       <div class="est-readout">
@@ -1016,7 +1015,7 @@ try{
         </ul>
       </article>
 
-      <article class="tier" id="tier-yt" data-reveal style="display:none;">
+      <article class="tier" id="tier-yt" data-reveal>
         <span class="tier-num">03</span>
         <h3 class="tier-title">YouTube Long-Form</h3>
         <p class="tier-sub">5–10 Min In-Depth Video</p>
@@ -1084,7 +1083,7 @@ try{
 </section>
 
 <!-- 09 — LET'S TALK / FOOTER -->
-<section class="cta view-active" id="contact" data-view="profile">
+<section class="cta" id="contact">
   <div class="container">
     <p class="eyebrow" data-reveal>08 — Let's Talk</p>
     <h2 class="cta-title" data-reveal>Let's Build Something <em>Together</em></h2>
@@ -1101,7 +1100,7 @@ try{
     <div class="cta-socials" data-reveal>
       <a data-href="igUrl" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
       <a data-href="fbUrl" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</a>
-      <a id="yt-footer-link" style="display:none;" data-href="ytUrl" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a>
+      <a id="yt-footer-link" data-href="ytUrl" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a>
       <a data-href="xUrl" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X (Twitter)</a>
       <a data-href="email"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
       <a id="wa-footer-link" style="display:none;" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
@@ -1178,8 +1177,7 @@ const cfg = {
   ytUrl: "https://www.youtube.com/@mothersinside",
   xUrl: "https://x.com/mothersinside",
   year: "2026",
-  cloudBinId: "6afafe7dffd5d16053c58e33",
-  cloudReadKey: "$2a$10$BY1RtYMjnMaR9r3XN1ySO.mT1jd0flmCmJ1flWmLTAW2.tu07jnYC"
+  workerUrl: "https://mothers-inside-sync.mummaminni0.workers.dev"
 };
 
 const DEFAULT_FAQS = [
@@ -1540,6 +1538,7 @@ function renderFAQs(faqText) {
 }
 
 function applyMediaKitData(data) {
+  data.ytShow = true;
   // Update Social Links & Email dynamically for all visitors
   const activeEmail = data.email || cfg.email;
   window.__miActiveEmail = activeEmail;
@@ -1865,16 +1864,15 @@ async function loadMediaKitData() {
     pAddonRaw: '+25% to +40%',
     pAddonLink: '₹500 – ₹1,000',
     brandsShow: false,
-    ytShow: false
+    ytShow: true
   };
   const localData = getLocalStats();
 
-  if (cfg.cloudBinId && cfg.cloudBinId !== "YAHAN_BIN_ID_PASTE_KAREIN") {
+  if (cfg.workerUrl) {
     try {
-      const hdr = (cfg.cloudReadKey && !cfg.cloudReadKey.startsWith('YAHAN_')) ? { 'X-Access-Key': cfg.cloudReadKey } : {};
       const json = window.__miPrefetch
         ? await window.__miPrefetch
-        : await fetch(`https://api.jsonbin.io/v3/b/${cfg.cloudBinId}/latest`, { headers: hdr, cache: 'no-store' }).then(r => r.ok ? r.json() : null);
+        : await fetch(cfg.workerUrl + '/data', { cache: 'no-store' }).then(r => r.ok ? r.json() : null);
       if (json && json.record) {
   data = Object.assign(data, json.record);
   setLocalStats(json.record);
@@ -2013,6 +2011,36 @@ function switchPageView(tabName, skipHash) {
 
 document.querySelectorAll('.nav-tab').forEach(btn => {
   btn.addEventListener('click', () => switchPageView(btn.dataset.tab));
+});
+
+/* Smart Fixed Header: visible at top or on tap/click, hidden while scrolling */
+const siteHdr = document.querySelector('.hdr');
+function syncHdrOffset() {
+  if (siteHdr) document.body.style.paddingTop = siteHdr.offsetHeight + 'px';
+}
+syncHdrOffset();
+window.addEventListener('resize', syncHdrOffset);
+
+let lastHdrY = window.scrollY || 0;
+let hdrTapAt = 0;
+window.addEventListener('scroll', () => {
+  if (!siteHdr) return;
+  const curY = window.scrollY || 0;
+  if (curY <= 40) {
+    siteHdr.classList.remove('hdr-hidden');
+  } else if (Date.now() - hdrTapAt > 350 && Math.abs(curY - lastHdrY) > 10) {
+    siteHdr.classList.add('hdr-hidden');
+  }
+  lastHdrY = curY;
+}, { passive: true });
+
+document.addEventListener('click', (e) => {
+  if (!siteHdr) return;
+  if (!siteHdr.contains(e.target) && siteHdr.classList.contains('hdr-hidden')) {
+    hdrTapAt = Date.now();
+    lastHdrY = window.scrollY || 0;
+    siteHdr.classList.remove('hdr-hidden');
+  }
 });
 
 const initHash = (window.location.hash || '').replace('#', '');
