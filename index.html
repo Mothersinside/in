@@ -1542,7 +1542,7 @@ function applyMediaKitData(data) {
   // Update Social Links & Email dynamically for all visitors
   const activeEmail = data.email || cfg.email;
   window.__miActiveEmail = activeEmail;
-  const normYt = (u) => String(u || '').replace(/^https?:\/\/youtube\.com/i, 'https://www.youtube.com');
+  const normYt = (u) => { let s = String(u || '').trim(); if (s && !/^https?:\/\//i.test(s)) s = 'https://' + s; return s.replace(/^https?:\/\/youtube\.com/i, 'https://www.youtube.com'); };
   const activeLinks = {
     igUrl: data.igUrl || cfg.igUrl,
     fbUrl: data.fbUrl || cfg.fbUrl,
@@ -1564,7 +1564,6 @@ function applyMediaKitData(data) {
   const appPackages = {
     igUrl: 'com.instagram.android',
     fbUrl: 'com.facebook.katana',
-    ytUrl: 'com.google.android.youtube',
     xUrl: 'com.twitter.android'
   };
   document.querySelectorAll('[data-href]').forEach(el => {
